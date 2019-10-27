@@ -4,6 +4,6 @@ when we're using Google DataStore.
 
 **list of tasks 2019/Oct/26**
 - [x] Create CRUD and Controller for tasks;
-- [x] Make a ReactJS front-end to show a list of tasks while consumes our API;
+- [x] Make a ReactJS front-end for show a list of tasks while consumes our API;
 - [ ] Make a page to create task;
 - [ ] Enable firebase authentication with google and facebook.
