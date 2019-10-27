@@ -1,5 +1,7 @@
 package learnproject;
 
+import static com.googlecode.objectify.ObjectifyService.ofy;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -13,11 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.io.IOUtils;
 
 import com.google.appengine.repackaged.com.google.gson.Gson;
-import static com.googlecode.objectify.ObjectifyService.ofy;
-
 
 import entities.Task;
-import util.Constants;
 
 @SuppressWarnings("serial")
 @WebServlet("/task/*")
@@ -88,6 +87,7 @@ public class TaskServlet extends HttpServlet {
 	private void sendAsJson(
 			HttpServletResponse response, 
 			Object obj) throws IOException {
+			response.addHeader("Access-Control-Allow-Origin","http://localhost:3000");
 			response.setContentType("application/json");
 			String res = gson.toJson(obj);
 			PrintWriter out = response.getWriter();
